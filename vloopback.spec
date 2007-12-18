@@ -6,8 +6,8 @@
 %define		_rc	rc1
 %define		_rel	0.%{_rc}.1
 #
-Summary:	vloopback
-Summary(pl.UTF-8):	vloopback
+Summary:	Video4Linux Loopback Device
+#Summary(pl.UTF-8):	vloopback
 Name:		vloopback
 Version:	1.1
 Release:	%{_rel}
@@ -15,12 +15,14 @@ License:	GPL v2
 Group:		Base/Kernel
 Source0:	http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice/%{name}-%{version}-%{_rc}.tar.gz
 # Source0-md5:	d5bc4f1efff9b69c93cd6de061ca2eaa
-URL:		http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice
+URL:		http://www.lavrsen.dk/twiki/bin/view/Motion/VideoFourLinuxLoopbackDevice
 %{?with_dist_kernel:BuildRequires:	kernel%{_alt_kernel}-module-build >= 3:2.6.20.2}
 BuildRequires:	rpmbuild(macros) >= 1.379
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+The video4linux device is a driver that implements a video pipe using two
+video4linux devices.
 
 #%description -l pl.UTF-8
 
