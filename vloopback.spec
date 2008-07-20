@@ -7,7 +7,7 @@
 %define		_rel	0.%{_rc}.1
 #
 Summary:	Video4Linux Loopback Device
-#Summary(pl.UTF-8):	vloopback
+Summary(pl.UTF-8):	Urządzenie loopback dla Video4Linux
 Name:		vloopback
 Version:	1.1
 Release:	%{_rel}
@@ -21,14 +21,16 @@ BuildRequires:	rpmbuild(macros) >= 1.379
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The video4linux device is a driver that implements a video pipe using two
-video4linux devices.
+The video4linux device is a driver that implements a video pipe using
+two video4linux devices.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+Urządzenie video4linux to sterownik implementujący potok obrazu przy
+użyciu dwóch urządzeń video4linux.
 
 %package -n kernel%{_alt_kernel}-misc-vloopback
 Summary:	vloopback kernel module
-Summary(pl.UTF-8):	vloopback
+Summary(pl.UTF-8):	Urządzenie loopback dla Video4Linux
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -38,8 +40,12 @@ Requires(postun):	%releq_kernel
 %endif
 
 %description -n kernel%{_alt_kernel}-misc-vloopback
+The video4linux device is a driver that implements a video pipe using
+two video4linux devices.
 
-#%description -n kernel%{_alt_kernel}-misc-vloopback -l pl.UTF-8
+%description -n kernel%{_alt_kernel}-misc-vloopback -l pl.UTF-8
+Urządzenie video4linux to sterownik implementujący potok obrazu przy
+użyciu dwóch urządzeń video4linux.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_rc}
